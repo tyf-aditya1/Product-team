@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd:*)",
+      "Bash(pip3 install:*)",
+      "Bash(python3:*)",
+      "Bash(source:*)",
+      "Bash(pip install:*)",
+      "Bash(python:*)",
+      "Bash(chmod:*)",
+      "Bash(./jira PROD-761)",
+      "Bash(./skill SSO_PRD PROD-761)",
+      "Bash(./jira:*)",
+      "WebFetch(domain:thefinancialbrand.com)",
+      "WebFetch(domain:www.equipifi.com)",
+      "WebSearch",
+      "Bash(curl:*)",
+      "WebFetch(domain:tyfone.com)",
+      "WebFetch(domain:www.pymnts.com)"
+    ]
+  }
+}

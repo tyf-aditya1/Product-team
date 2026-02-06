@@ -1,0 +1,15 @@
+#!/bin/bash
+# Jira Ticket Downloader
+# Usage: jira PROD-123
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+if [ -z "$1" ]; then
+    echo "Usage: jira <TICKET_ID>"
+    echo "Example: jira PROD-542"
+    exit 1
+fi
+
+# Activate virtual environment and run
+source "$SCRIPT_DIR/venv/bin/activate"
+python "$SCRIPT_DIR/download_ticket.py" "$1"

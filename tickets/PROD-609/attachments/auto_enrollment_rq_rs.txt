@@ -1,0 +1,35 @@
+Request:
+========
+PUT https://api-gw-uat.fisglobal.com/api/securlock-equip2/user-management/v1/user/U1BqSG5tN1FRM01QUkZjRVZrclJhdz09?identityType=externalUserId HTTP/1.1
+uuid: 9730593d-436c-4404-8a51-5afd51ba977a
+integration-id: e742b2ad-e464-450f-8333-9097ee7b787b
+Authorization: Bearer eyJ4NXQiOiJNV0k0TWpnMFlqUmhPR0U1WVRNek1XTTRObU14WXpNMU56Um1aR1E1TVdVd01URmlaamRoTXciLCJraWQiOiJabU01WldFek1XRmlaVEV5WlRaaE1qZzJaR05oTlRRMVlUY3dNbUV4TkRobU56TXlPR0k0TnpneFlqTTRaVFl5TXpjeVlqQTRaRFV6TlRreFl6Tm1ZUV9SUzI1NiIsInR5cCI6ImF0K2p3dCIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJOSVNIQU5UQSIsImF1dCI6IkFQUExJQ0FUSU9OIiwiYmluZGluZ190eXBlIjoicmVxdWVzdCIsImlzcyI6Imh0dHBzOlwvXC8xMDAuNzIuMzUuMjU6OTQ0M1wvb2F1dGgyXC90b2tlbiIsImNsaWVudF9pZCI6IkpqN0dMdkVuakQ4ZXZIYjdFbUl2RkcwYzVIQWEiLCJhdWQiOiJKajdHTHZFbmpEOGV2SGI3RW1JdkZHMGM1SEFhIiwibmJmIjoxNzY1ODg3ODE1LCJhenAiOiJKajdHTHZFbmpEOGV2SGI3RW1JdkZHMGM1SEFhIiwic2NvcGUiOiJkZWZhdWx0IiwiZXhwIjoxNzY1ODkxNDE1LCJpYXQiOjE3NjU4ODc4MTUsImJpbmRpbmdfcmVmIjoiZWIwNGM3NTk2MTExN2M3ZmU5YTlmNTdhYmQ1N2E5ZDAiLCJqdGkiOiJmMzIzODc3Yi03NTA3LTQ0YjYtOTAxOC0zYzZhYjNmOTliYTkifQ.CAlvX8_hQGbJ3FHCrDdBzM-zwFCGusfR5T_75eI_XMy47fyZUUQol5oojEKyrRNdq0nkHfVOaXQDDUj9ie3r9QGix3Q9PK-bPsthviEc3Trxumnk8Z13OBMI2Mdk9EwJlCa0XTJYXI680KiTj92yF0R7qPzuimXpvLrEJhM9APWMWHFCL9oVdfMo32rn8EWUr62JO1c-ySWGCIyKZPS_4VifGLzNSR-KVCF9p_phQLuzMzXAn9Hr5m8Vz1vMNG67KZ_0vsBq-M-pSepVW1r0L0u-i-QgTO1Byrsz9qTq96KZp_Y6I3FKzICSZVSBdmqDtLmJZoGyQoliKi67H-Sdqw
+Content-Type: application/json
+Host: api-gw-uat.fisglobal.com
+ 
+{
+	"autoEnrollmentCriteria": {
+		"fullName": "Felice Daniel",
+		"ssn": {
+			"plainText": "",
+			"cipherText": ""
+		},
+		"ssnLast4": "2968",
+		"dateOfBirth": {
+			"plainText": "1984-10-16",
+			"cipherText": ""
+		}
+	}
+}
+Response:
+=========
+HTTP/1.1 200 OK
+{
+    "identities": [
+        {
+            "identityType": "externalUserId",
+            "identityValue": "U1BqSG5tN1FRM01QUkZjRVZrclJhdz09"
+        }
+    ],
+    "cards": []
+}

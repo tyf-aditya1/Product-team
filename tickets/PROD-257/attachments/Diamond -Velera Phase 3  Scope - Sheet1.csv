@@ -1,0 +1,32 @@
+Features,In Scope?,product ,Existing implementation usecases,API spec reference ,Note
+VISA | Order New Card & Digital issuance:,,,,,
+Order New Card (Physical card),,Both,,VELERA,confirm with velera
+Order Replacement Card (Physical card),Y,Both,,VELERA,
+Track Plastic Card,Y,Both,,VELERA,
+Set Reset PIN + Notification,Y,Both,,VELERA,
+Digital Issuance (Order new/replacement virtual card ),Y,Both,,VELERA,confirm with velera
+Authorized Users | Add Users,Y,Credit,,VELERA,"No acces to privileges,no feature access related to card apart frm debit, no business cards
+Confirm on who can add auth user only primary or joint as well?"
+Mobile Wallet | In-App Push Provisioning ,Y,Both,,VELERA,
+,,,,,
+Velera|Payments,,,,Velera API spec references,
+Balance Transfer to FI Card (Balance Consolidation) + Notification,Y,Credit,existing use case for cu,"13.4 Balance Consolidation
+DO NOT USE THIS FUNCTION FOR eBalCon. This function is solely for the eBalCon VENDORS USAGE.
+Contact your PSCU Account Executive to enroll in Balance Consolidation
+13.6 eBalcon 
+Note from Velera: There are three functions that support the eBalcon solution. eBalcon does require an enrollment and PCF changes. Please contact your Service Executive prior to implementation of these eBalcon functions. ",check with velera
+Cash Advance Request ,Y,Credit,,8.9 Authorization and Transaction Posting. ,
+Credit Limit Increase Request (through app link),,,,12 CLADJUSTXML Request,"explore options meridian link not velera, check options "
+Dispute Mangement + report lost/stolen (disputed transaction records to be listed),Y,Both,,,
+Update Cardholder Information (handled by correlation),,,handled by keystone,11.1 Update Cardholder Information,
+Velera| Card Controls,,,,Velera API spec references,
+Decline Certain Merchant Types,,,,SSO reference,
+Decline Certain Transaction Types,,,,SSO reference,
+Update cards on file ,Y,,,,"check with velera, hows done"
+Velera| Alerts,,,,Velera API spec references,
+Balance Consolidation is Submitted,,,,13.6 eBalcon ,
+New Email Address is Created (related to UD; handeled by Correlation),,,,,
+New User Account is Created,,,,,
+Specific Merchant Type is Detected,,,,Confrim with Velera ,
+Specific Transaction Type is Detected,,,,,
+User Credentials are Reset,,,,,

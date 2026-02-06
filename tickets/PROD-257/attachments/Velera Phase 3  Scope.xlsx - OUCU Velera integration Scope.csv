@@ -1,0 +1,31 @@
+Features,In Scope?,product ,Existing implementation usecases,API spec reference ,,,,,,,,,,,
+Velera | Order New Card & Digital issuance:,,,,,,,,,,,,,,,
+Order New Card (Physical card),Y,Both,velera ,,,,,,,,,,,,
+Order Replacement Card (Physical card),Y,Both,velera ,,,,,,,,,,,,
+Track Plastic Card,Y,Both,velera ,,,,,,,,,,,,
+Set Reset PIN + Notification,Y,Both,velera ,,,,,,,,,,,,
+VISA | SDK | Digital Issuance (Order new/replacement virtual card ),Y,Both,velera ,,,,,,,,,,,,
+Authorized Users | Add Users,Y,Both,,TBD,,,,,,,,,,,
+Mobile Wallet | In-App Push Provisioning | VISA,Y,Both,Velera,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+Velera|Payments,,,,Velera API spec references,,,,,,,,,,,
+Balance Transfer to FI Card (Balance Consolidation) + Notification,Y,Credit,,"13.4 Balance Consolidation
+DO NOT USE THIS FUNCTION FOR eBalCon. This function is solely for the eBalCon VENDORS USAGE.
+Contact your PSCU Account Executive to enroll in Balance Consolidation
+13.6 eBalcon 
+Note from Velera: There are three functions that support the eBalcon solution. eBalcon does require an enrollment and PCF changes. Please contact your Service Executive prior to implementation of these eBalcon functions. ",,,,,,,,,,,
+Cash Advance Request ,Y,Credit,Need current implementation references,8.9 Authorization and Transaction Posting. ,,,,,,,,,,,
+Credit Limit Increase Request (through app link),Y,Credit,Need current implementation references,12 CLADJUSTXML Request,,,,,,,,,,,
+Dispute Mangement + report lost/stolen (disputed transaction records to be listed),Y,Credit,,,,,,,,,,,,,
+Update Cardholder Information (handled by correlation),N,NA,Handeled by Core,11.1 Update Cardholder Information,,,,,,,,,,,
+Velera| Card Controls,,,,Velera API spec references,,,,,,,,,,,
+Decline Certain Merchant Types,Y,Both,,SSO reference,,,,,,,,,,,
+Decline Certain Transaction Types,Y,Both,,SSO reference,,,,,,,,,,,Y
+Update cards on file ,Y,Both,Display all merchant details where card is saved; Manage subscription pause or remove,,,,,,,,,,,,N
+Velera| Alerts,,,,Velera API spec references,,,,,,,,,,,
+Balance Consolidation is Submitted,Y,Credit,,13.6 eBalcon ,,,,,,,,,,,
+New Email Address is Created (related to UD; handeled by Correlation),N,,Enrol for credit card estmt exists in platform,,,,,,,,,,,,
+New User Account is Created,Y,Credit,,,,,,,,,,,,,
+Specific Merchant Type is Detected,Y,Both,,Confrim with Velera ,,,,,,,,,,,
+Specific Transaction Type is Detected,Y,Both,,,,,,,,,,,,,
+User Credentials are Reset,Y,Credit,,,,,,,,,,,,,

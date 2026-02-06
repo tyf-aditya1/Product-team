@@ -1,0 +1,30 @@
+Request:
+========
+Post https://axonapi.axon.zetapay.tech/axon-shell-api/api/v1/ifis/1000001/sdk/user/verifySession
+{
+  "appId": "b3badd2a-2753-402d-bea6-80c4df632e3a",
+  "user": {
+    "identityType": "externalUserId",
+    "identityValue": "a3BmL2lCc3FORkVTU2drZldsTlhMZz09"
+  }
+}
+
+API Response:
+============
+{
+  "code": "ASH101",
+  "message": "Unauthorized access",
+  "version": null,
+  "details": {},
+  "innerError": null,
+  "debugId": "7855d394-f496-4e68-86e8-eb458a255694",
+  "reference": ""
+}
+
+SDK  Response:
+=============
+{
+	"code": "CSE102",
+	"statusCode": "",
+	"message": "Invalid API call. The user is not logged in, or the request is unauthorized."
+}

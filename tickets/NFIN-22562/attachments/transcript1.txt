@@ -1,0 +1,1654 @@
+0:04
+i was recording uh basically as you all know that we use
+0:42
+standards for a ticketing
+0:47
+system in our apps so uh when we initially started
+0:53
+we thought of integrating
+0:56
+the entire sdk uh support sdk which
+1:03
+which is uh
+1:06
+shows you the list of tickets for a user and you can also view the tickets
+1:11
+so but uh uh the
+1:15
+pm team uh wanted to use the eps so that we can have more
+1:21
+control over uh the integration
+1:29
+uh so we switched to a aps uh
+1:33
+uh actually we just did a poc long back
+1:36
+with the sdk integration but later while doing the actual integration we
+1:42
+decided we'll use apis so what we did was
+1:47
+we started with integrating the apis and created this talk with all details
+1:55
+if you see the apis
+1:59
+it's a very comprehensive dock
+2:03
+you can see this list of aps which are available
+2:08
+this is only the eps related to ticket
+2:11
+but there are a lot of other apis which are
+2:17
+available but we are not using them all we are
+2:24
+just using uh uh
+2:27
+create ticket api
+2:31
+so yeah so when we decided that we'll use
+2:36
+aps uh we started uh integrating and uh
+2:42
+the first uh hurdle which we got is
+2:48
+how to show the
+2:50
+chat with the agent so because once a ticket is created and
+2:55
+the agent updates the ticket the user should have the option to reply
+2:59
+and basically the conversation between the
+3:02
+end user and agent so
+3:05
+uh if he uh
+3:09
+see if he had uh gone and building our own ui for that it
+3:14
+would have taken a lot of time and
+3:19
+it's a little complicated because you need to handle a lot of things in that
+3:23
+conversation in the age enterprise or when the user
+3:27
+responds and having attachments updating in the real time all that all these
+3:32
+things because of all this complications we decided to use uh sdk
+3:38
+so right now for
+3:43
+creating and creating tickets and getting the
+3:46
+tickets creating user and getting the list of tickets for that
+3:51
+user and creating tickets
+3:58
+we use apis for this and once the user clicks on
+4:03
+a ticket we launch the sdk to show the
+4:06
+conversation so that is how
+4:11
+it is integrated right now so this integration is part api part
+4:15
+sdk so
+4:27
+the sound we integrated this feature
+4:33
+so i have this document where you can find
+4:37
+the links to eps and the sdk so
+4:41
+so if you go to the sdk sagar so if there is any sdk update so
+4:50
+at the time will there be api update also
+4:54
+no no no so uh sdk there have been updates in the sdk
+4:59
+and we have incorporated that but now this sdks are
+5:04
+kind of outdated zendesk has rolled out new uh sdks
+5:13
+and uh i think maybe
+5:16
+they will deplete this sdks right now it is available but i think
+5:21
+they will be deprecating sdks so
+5:28
+like every year do we have to upgrade the sdk or how is it no
+5:33
+based on the updates rolled out by examiners so they will provide the
+5:37
+communication right like if if anything we need to
+5:42
+update we used to get emails but i think there
+5:47
+hasn't been any update in a while because they have come up with other
+5:52
+sdks so
+5:56
+recently we haven't seen any update so yeah if you go to this
+6:04
+site sdk documentation site you can see
+6:09
+they have provided the integration steps and
+6:13
+these are the functionality uh provided
+6:18
+by the sdk
+6:21
+so a request is nothing but a ticket so we are using only the
+6:27
+uh this part from the sdk
+6:31
+basically to view the conversation for a ticket
+6:37
+so these are the integration steps that they gave
+6:43
+we go to the activities present here so these are the four activities or
+6:50
+screens available in the sdk uh
+6:54
+health center activity is uh the place where
+7:00
+the user can find a glossary of articles
+7:07
+which have to be uploaded in the zendesk sdk
+7:11
+and when he chooses one of the articles he goes to the view article activity
+7:16
+and the request activity is the one which we
+7:20
+are using so where you where the user can chat
+7:24
+with the communicate with the zendesk agent for a ticket and this is the list
+7:30
+of tickets activity so out of these four activities we are just using one
+7:47
+so basically the this doesn't have much
+7:52
+this is a short
+7:56
+document about integrating the sdk sagar this is the messaging sdk only
+8:07
+right yes okay
+8:23
+and yeah
+8:26
+so uh what uh we do here is uh there's also one
+8:33
+step involved in launching this sdk which is creating identity
+8:40
+so because the sdk has to know uh the user
+8:46
+right uh the user who is
+8:49
+trying to view this ticket so
+8:54
+because we just have the ticket number when
+8:58
+the user clicks on view ticket from the list of tickets
+9:02
+uh there is
+9:04
+the ticket number that we have but the sdk also requires the user
+9:11
+identity so uh there are two types of uh
+9:16
+identity we can set the identity in two ways one
+9:22
+is anonymous identity and one is the jwt identity
+9:26
+so let me go to is
+9:58
+okay so on the left as you can see this is
+10:12
+the support here sdk and
+10:17
+these are the steps of integration and uh apart from support sdk you can
+10:22
+also see this new sdks unified sdk but uh we are not using that
+10:31
+right now so yeah uh these are the steps instructions adding the sdk now or to
+10:44
+the project initializing
+10:48
+so yeah so with this
+10:51
+support sdk to work you also need to do a setup in
+10:56
+the zendesk portal
+10:59
+so if you go to the zendesk portal
+11:12
+uh you have to go to settings admin center
+11:22
+channels and mobile sdk
+11:30
+so if you have to set up the sdk support sdk you need to create the app
+11:35
+over here as you can see uh multiple apps are created for you at a
+11:39
+test environment uh usually uh for the test environment
+11:44
+we we use this portal which is uh
+11:50
+typhoon specific this is this is the site that we used to
+11:56
+configure apps and test in uh because uh we cannot uh
+12:01
+test in the
+12:04
+ces portal because while testing multiple tickets are created by the
+12:08
+testing team and those show up in the uh cusa zendesk portal
+12:14
+so that's the reason we create the configurations over here and uh so
+12:19
+whenever you have whenever there's a new tenant or uh you
+12:25
+for which you need to add complication you just need to go to the ad app
+12:33
+and this this configuration will be automatically created i have i didn't
+12:36
+client is two are the
+12:41
+important conflicts required for setting up the sdk
+12:47
+and then you have the authentication method
+12:53
+so this authentication method depends on what you choose
+13:01
+during integration so
+13:05
+here is the setting and identity section
+13:08
+here there are two types of identities one is anonymous and
+13:13
+one is the jwt identity so whatever you choose to
+13:19
+implement here same thing has to be chosen here so if you want anonymous
+13:24
+identity you have to integrate using anonymous
+13:27
+identity yeah
+13:32
+so anonymous identity means you don't have to authenticate with the server
+13:37
+so if uh if
+13:44
+you don't want the server authentication you can
+13:46
+go ahead with this but
+13:50
+using jwt identity provide provides one additional uh
+13:55
+level of production because the every user is authenticated with your server
+14:02
+so but yeah uh again uh because uh
+14:06
+this feature can be accessed only once you log in
+14:09
+uh we miss i have proposed to use the
+14:13
+anonymous identity recently because we are facing some issues with the jwt
+14:17
+identity which is uh leading to this comments not
+14:22
+loaded issue but for some specific users so i have
+14:26
+asked ms have proposed to use anonymous identity
+14:31
+prasad and we know i think they are still reviewing
+14:36
+because user has to authenticate himself before
+14:39
+he can use this feature right so using this identity should be fine but
+14:43
+i think once they approve then we can change the existing implementation or
+14:48
+configure this type of identity as well
+14:52
+but right now all our apps use the jwt uh uh authentication method
+15:01
+so if you choose to uh use the jwt
+15:04
+authentication you need to
+15:10
+share an end point with zendesk so what happens is basically you
+15:17
+send a when zendesk
+15:20
+hits this endpoint you share a jwt token
+15:24
+and zendesk will verify that token because
+15:28
+the secret for generating the jw token is
+15:33
+available here and this is
+15:37
+this is used by our packet to create the jwt
+15:42
+so when user uh
+15:44
+opens this opens a ticket in the support sdk first thing that
+15:49
+happens is identity verification so zendesk will
+15:52
+hit mcp endpoint and verify the user
+15:57
+our mcp endpoint will have to implement
+16:03
+the zendesk jwt endpoint the steps for integration are broadened
+16:08
+here so we did we did do this integration so
+16:13
+we implemented the jwt endpoint
+16:17
+based on this documentation
+16:24
+we have followed all this okay
+17:02
+basically it's a basic jwt we can i think even at our
+17:08
+back end they have used libraries to generate this
+17:13
+jwt token so they have followed the steps and
+17:16
+developed that end point and right now as i mentioned we are
+17:21
+using the jwt uh identity
+17:24
+for all our terms if
+17:29
+we choose to use the anonymous identity then this authentication won't happen
+17:34
+and there will be no communication with our backend
+17:40
+so yeah can you summarize again the jwt flow
+17:46
+so we we our mcb has created an api and we are passing that token and mcb is
+17:51
+passing the token zendesk is verifying that and
+17:55
+then they are hitting our api and basically
+17:58
+they are verifying whether the user token is correct or not
+18:03
+yeah so this is the flow program when user clicks on via view
+18:07
+ticket right the sdk is launched right
+18:12
+so in sdk we need to choose on our identity
+18:17
+while develop developing while integrating so we have chosen the
+18:22
+jwt identity method because it is
+18:26
+more secure yes
+18:30
+instead of using anonymous identity
+18:34
+so because of that if you need if you want
+18:38
+to use the jwt identity method then we need to develop an endpoint
+18:43
+so that the user will be authenticated
+18:49
+in runtime so what happens is when we launch the
+18:52
+sdk we set the identity as uh
+18:59
+jwt okay okay
+19:31
+yeah so when we launch the support sdk uh we first initialize this unless and
+19:37
+then we set the identity if we go to the set identity method
+19:46
+we are creating jwt identity instance and passing the unique identifier
+19:53
+and then setting the identity so here we have the option of anonymous
+19:58
+identity also but because this is more secure here using the jwt identity so
+20:04
+we set it over here and then when we launch the sdk
+20:14
+so this is helps interactivity yeah this is the
+20:24
+plugin method
+20:27
+so after setting identity we just launched the
+20:30
+request activity with id this is nothing but the ticket number ticket id or
+20:33
+ticket number so
+20:36
+we launch the activity to open the ticket
+20:39
+conversation so when we do this in the background
+20:43
+what happens is because we have set the identity as jwt identity
+20:49
+and we have set the
+20:54
+unique identifier for the user so what happens in the background
+21:02
+zendesk will take this unique identifier and send it to
+21:09
+this end point this is the endpoint that we have shared
+21:12
+with the zendesk when you set up the you know
+21:21
+so if i select jwt we need to enter the jwt url over here
+21:27
+okay we need to enter the same url that will be expo
+21:32
+this will be we have developed here
+21:37
+if you let me try to open some other you can see here we have selected
+21:45
+the authentication method as
+21:48
+jwt and the url that we have ordered is generated jwt
+21:57
+okay you go over here you can see the same thing that we
+22:03
+are using in this personal request and here the
+22:07
+uh input is the unique identity so when we send this
+22:26
+come on nine production
+23:35
+so everybody up this hand i don't know why it's not working right now but this
+23:39
+end point when is hit with the user token which is
+23:43
+nothing but the unique identifier it returns a jwt which can be verified
+23:49
+using this secret okay creativity
+23:54
+so the zendesk
+23:59
+systems verify this user using this endpoint and the secret and if
+24:05
+they are able to verify the jwt then only then the
+24:10
+conversation is the conversation shows up
+24:14
+open the app so
+24:18
+recently it's not recently from a few
+24:22
+months we are seeing this the comments not loaded error right
+24:26
+yeah so that is even we are not sure why that error is
+24:30
+happening for few specific users we have tried to check with zendesk but
+24:35
+we have not got any proper uh response uh some some where something is wrong
+24:43
+so i don't know our implementation is same uh it works for some users and
+24:48
+for some it doesn't so something is wrong and there and or
+24:53
+we're not basically we're not able to figure out what is wrong
+24:56
+what is the issue behind that uh comments not loaded uh
+25:00
+issue for a few specific users we're not sure so for that reason i had
+25:07
+suggested to use the anonymous identity so that there's no jwt
+25:12
+authentication and and i have just tried this and tested for the same user which
+25:19
+we are facing that issue right or same user
+25:22
+it works with anonymous identity okay
+25:27
+so if you switch to this and again because the user is already
+25:32
+authenticated before using this feature i think that jw even if we remove the
+25:37
+jwt identity method it should be fine so i
+25:44
+propose that but yeah once we know and uh rasadapro
+25:49
+can make the changes and yeah changes also
+25:55
+there are no major changes when we switch
+26:05
+so on identity to anonymous uh is are there
+26:08
+any like published uh uh you know security compromises that
+26:14
+can happen no no but if there were any security
+26:19
+compromises they wouldn't have listed it here so they would have made
+26:24
+the jwt identity method the only option but they have not
+26:31
+said anything over here so it's not like we are not setting any
+26:37
+identity though it is anonymous identity we have
+26:41
+to set it with email and the first name last name
+26:46
+so because if you just use anonymous identity every time a new user will be
+26:50
+created in zendesk but if we use uh name and email email is the primary key in
+26:56
+zendesk so if you use the email then
+27:03
+the user will be navigated to the proper ticket
+27:06
+link to the same user so
+27:11
+these changes we need to do uh if we have to switch to non-message
+27:16
+okay need to
+27:19
+have the user's name and email added when we create the identity
+27:31
+plus along with this we need to change it in
+27:34
+the portal also you need to make it anonymous instead of
+27:37
+jwt and once we shift anonymous this end
+27:44
+point also won't be used um stagger so uh
+27:55
+so we have our existing clients with jwt or
+27:59
+identity right so let's say we switch to anonymous and then we release the apps
+28:04
+so after the update of the application
+28:08
+would there be any kind of issues
+28:12
+no because see
+28:17
+the only additional step which is getting skipped here is jwt
+28:23
+authentication apart from that everything will be normal
+28:26
+the tickets will open uh and the user will be able to communicate
+28:31
+with the agent okay
+28:36
+customers notification we are using a unique
+28:56
+identifier token only yeah i was coming to that so while setting up the app
+29:02
+there is uh the first page where you have to
+29:07
+uh the auto generated details you just have
+29:11
+to select the jwt authentication method jwt or anonymous
+29:16
+and uh the next page here is having a few
+29:21
+things from this page we only
+29:25
+select this push notification integration type
+29:30
+so at that time we chose to use the web
+29:33
+book and if you choose a web book we need to
+29:37
+provide a url we need to expose the url to zendesk
+29:42
+whenever there is any notification push notification to be sent to this user
+29:47
+sandisk will hit this url with the push notification payloads
+29:54
+so the
+30:00
+identifier that is sent by zendesk is the same unique
+30:04
+identifier we have
+30:09
+certain identity only right
+30:14
+correct so if we revert it back to if we change
+30:18
+it to uh if we remove jwt and put
+30:22
+in that case we are not passing any identity right
+30:25
+we're just passing username and email id correct
+30:32
+we haven't thought about this it was
+31:44
+yeah identifier it's here
+31:52
+one second so uh while registering for push
+32:15
+notifications registered device identifier
+32:26
+yeah we are setting the unique identifier in
+32:30
+this method and you know that zendesk it is not used
+32:35
+uh here the same thing is used uh get question
+32:39
+deficient again the token is nothing but a unique identifier but this method is
+32:43
+different so
+32:50
+these are two separate things yeah
+32:54
+so initially even here there was one problem so what we used to do is
+33:00
+instead of this sending the unique id file initially we
+33:05
+used to send the device id so but the problem was
+33:14
+uh because we were testing using multiple devices right so a lot of uh
+33:19
+device ids are getting added so if you test for example you could test in 10
+33:24
+different devices by android 5 ios then all those devices were getting
+33:30
+filed up in zendesk so here and while sending the notifications uh senders
+33:35
+will send the identifier like this
+33:39
+this is for one device this is for another device
+33:42
+like just this list will keep on growing
+33:46
+so at our back end mcb it was becoming difficult because if
+33:51
+there are 50 devices then they have to loop it
+33:54
+and send a notification to each device one by one
+33:59
+but uh we identified this problem and later we made this change we
+34:04
+are not sending the device id instead we are sending unique identifiers so it
+34:09
+becomes easier to
+34:12
+handle at our back end as well so once we get this uh unique identifier we
+34:18
+can send push modification to all the devices linked to this unique identifier
+34:22
+so when we uh
+34:26
+any content file is nothing but a user's unique identifier right so when
+34:30
+the user remembers the device you send push notification only to that
+34:35
+device right so based on this unique identifier we get the remember devices
+34:40
+and send push notification only to those devices
+34:44
+so we have that endpoint as well yeah this is the node fiction endpoint
+34:54
+so this is the unique identifier for the user
+34:59
+type and notification so this is all my notification now some
+35:08
+notifications are uh
+35:13
+if uh the user is on the conversation page then the notification is all
+35:19
+automatically handled not uh
+35:23
+uh automatically automatically means the
+35:27
+comments are updated automatically so if
+35:33
+the sender's agent is replying in the real time
+35:39
+we get a notification then message already is automatically updated
+35:44
+in the conversation screen but if the user is not on the
+35:51
+sdk screen or the conversation screen then we have
+35:55
+handled the notification at our end so we show the notification and on click of
+36:00
+the notification we take the user to zendesk page so
+36:05
+see as you can see go to the push notifications
+36:36
+you have this push notification type right
+36:45
+based on this the notification is handled
+36:48
+once the user logs in if the notification type is zendesk then
+36:54
+if the user is automatically taken to the center screen
+37:00
+with that ticket number so that is a separate implementation
+37:06
+if you go to menu services menu service you can see that
+37:28
+okay this method is called uh
+37:56
+on every uh
+38:00
+first launch right first launch you know also this is called uh on on resume
+38:06
+so here every time we check if they're selling notification
+38:10
+and if it's a zendesk notification
+38:17
+you go to that specific degree so normal done
+38:24
+we go to the notifications uh page where we see all the notifications
+38:36
+now it is handling the push notifications
+38:45
+uh so yeah i need to set up two end points
+38:49
+one is for jwt and one is for uh notification these two end points are
+38:54
+used by zendesk the first one for
+38:57
+uh authenticating user and second one for sending push notification
+39:10
+once we enter this then you can save and
+39:14
+then we need to update the config so the cons it looks like this
+39:22
+so the key for
+39:25
+disk config is value for this is
+39:36
+this entire json so
+39:42
+most of the parameters are self-explanatory but i'll go through the
+39:46
+important ones so this is the important client id and
+39:51
+application id and client id these has this we need to copy
+39:56
+from the setup that we did
+40:01
+the end client id and
+40:04
+this is the url domain and url
+40:09
+so only this this part you can copy from here
+40:15
+and replace it in the config the rest of the url remains same first
+40:21
+two parameters and these are the chat
+40:25
+settings uh right now we are using chat only for
+40:30
+uh c of cu that's a even that is a separate sdk
+40:34
+integration so
+40:37
+if you want to go to the chat settings
+41:01
+you can see get the key here the same key we need to
+41:07
+use in the conflict to enable chat and these are those some configurations
+41:14
+i'll go to the chat sdk as well so this is the chat conflict
+41:21
+and chat account key uh
+41:24
+next is credentials so these credentials are
+41:45
+sorry yeah so
+42:17
+uh these credentials are required uh for the apis
+42:22
+so so sdk
+42:32
+the cku works with just uh you initialize the sdk
+43:04
+to give the base url application id and entirely
+43:23
+so but for the api you need the api token
+43:36
+so what happens is you can access the apis using uh in two ways one is
+43:40
+username password and second is username and token the problem with the username
+43:46
+password is if someone changes the password
+43:51
+then we need to update this config but the
+43:58
+token you don't change it open you generate it
+44:02
+and you can create a new one as well
+44:06
+you can delete the previous one so it is always better to use a token
+44:10
+instead of a password so see here password access is disabled and token
+44:16
+access is enabled so whenever uh you set up
+44:22
+zendesk for any tenant you need to enable this token access
+44:27
+for uh in tests we use the same uh
+44:32
+username and password for all tenants so we don't change anything over here but
+44:36
+when we do the integration in production we need to use
+44:41
+the correct uh token for each tenant and it won't be
+44:46
+same for it it could be different okay this is the place where you can
+44:51
+read the token if it's not usually it won't be present you need to
+44:56
+enable this token access and then uh click on add
+45:00
+api token so i'll add this link as well
+45:26
+okay yeah this is the username token which is
+45:37
+required for accessing the apis and uh
+45:42
+this apis are accessed on behalf of the agent so right because even here
+45:48
+i have logged into this portal as an agent
+45:52
+and i'm accessing all this sections as an agent if you go here and
+45:59
+view the profile you can see
+46:06
+so whenever a ticket is created the end
+46:10
+user is not creating the agent on behalf of the user is
+46:13
+creating it because we are using
+46:20
+the username and token on behalf of a agent
+46:31
+and here some conflicts are
+46:37
+specific to olb and some are some are common and some are specific to
+46:42
+mb so i think a few of them like these ones
+46:50
+are added by the old team next ones
+47:00
+server olv is also using apis to create user and
+47:04
+create okay yes yes the implementation uh the
+47:09
+api implementation is same for olpn okay
+47:19
+using uh for the viewing tickets so in mb we are using sdk right
+47:24
+they have used
+47:28
+the eps but it's not automatic so if you want to see the
+47:33
+response you need to refresh okay it doesn't update in real time it's
+47:40
+automatically and these are the other details so
+47:46
+whenever you create a ticket you see the topics right
+47:51
+uh the types of tickets you can create if you are
+47:56
+creating a ticket from the accounts page the
+47:59
+topic has to be account enquiry loan similarly loan or travel
+48:04
+notification all this these other topics so whenever we set up
+48:10
+based on the requirement what are features if
+48:14
+the co doesn't have travel notification
+48:17
+feature then can be removed they have bill pay we can add here
+48:23
+and whenever there are
+48:27
+a context uh specific ticket creation like
+48:30
+we have account inquiry or loan inquiry this topic this subject
+48:35
+should be pre-populated in the form
+48:40
+and right now we don't have a
+48:43
+context based ticket creation for all
+48:47
+features so we have this general and if the user directly goes to the
+48:52
+helpdesk module and i want to create a ticket then he can use the general
+48:58
+topic and we have this uh
+49:05
+configuration here as well so
+49:08
+if you need to enable account enquiry or transaction inquiry we can
+49:13
+upgrade the config here if we don't uh have this
+49:17
+keys here it will just have it will just show the helpdesk we won't see the
+49:22
+create ticket option in transaction page and accounts page
+49:31
+and uh next is the field ids so uh for tickets
+49:37
+we have the option to create the additional fields there are some default
+49:41
+fields but we have the option to create custom fields so if you go to
+49:59
+yeah ticket fields you can see
+50:08
+so in the tags uh column you can see
+50:11
+standard field so this is a present by default and the others
+50:16
+custom fields that we have added so for example if
+50:23
+because ours is the banking domain there are some uh user specific parameters
+50:28
+that the admin has to know so whenever a ticket is created the admin should know
+50:33
+the username member number the phone number
+50:36
+something else all these details so that if there is no username or member number
+50:42
+the user won't be able to check the user details in our admin console so
+50:47
+this is just a ticketing uh mechanism right uh
+50:51
+we don't we can't see typhon specific uh sorry the
+50:55
+user specific data over here which is
+50:58
+present in core or how many accounts the user has or
+51:02
+what are the contact contacts of the user are stored
+51:09
+in the core all those things you can't see here so
+51:12
+for the agents to view that information in our admin
+51:15
+console they need the number number or username or something some
+51:19
+uh info for in the ticket so that they can
+51:23
+go there and verify the details so because of that
+51:27
+we added a few custom fields like uh member number phone number
+51:33
+all those so whenever you add a custom field
+51:37
+you need to update the code
+51:40
+as well so if you for example if you want to add
+51:44
+a new field like nickname and that data for that field has to be
+51:49
+sent from the front end then it will show up in a ticket so for
+51:54
+example if you go to any ticket i think you can open water production
+52:00
+saga so in case of a not sending it will be
+52:04
+blank right yeah correct
+52:09
+and sagar is there any option to delete we can deactivate but is there an option
+52:13
+to delete the field in case after adding it
+52:18
+oh if you go to the settings and remove any filler it won't show up over here i
+52:23
+think it is showing up deactivate not the delete so once we added we can okay
+52:28
+okay we saying uh
+52:33
+i have not tried that so you're seeing the data still shows up
+52:37
+here are not data so if you go to the go to
+52:42
+the admin handler admin use not a
+52:50
+yeah here if you click on any custom field hamburg uh this uh menu
+52:56
+yeah so here we have holding the deactivate
+52:59
+okay so there is no way to uh delete so
+53:04
+you can't delete it i think yeah
+53:11
+and also saga so we are creating the fields right
+53:16
+there is one option to delete surya oh delete we have inside we have
+53:22
+okay okay so i can add it right so it won't affect
+53:25
+the existing modules right sagar if i'm adding any new fields now no no no new
+53:29
+fields wonderful okay
+53:34
+so yeah you can create the fields and whatever you
+53:40
+add to that field the front end it will show up over here
+53:45
+no yeah on that one i got it and also saga uh just one more dow so we
+53:58
+are creating the fields right so and also we can also create uh custom ids
+54:03
+also right ids for what you have to request ids
+54:10
+so yeah just give me a name
+54:15
+can we create new request id first id
+54:21
+yes you mean new field so
+54:27
+just one minute so i got ticket form id uh just i'm sharing the link here
+54:34
+in the chat this is how cfco is created
+54:40
+okay they have the request id so whenever the request id is uh the
+54:44
+particular key
+54:47
+it won't list out other field ids you have mentioned i have not explored
+54:53
+this hundred
+54:59
+yes so what they have mentioned whenever
+55:05
+they are sending the particular request id in the
+55:08
+so i'm not seeing any request id in our configurations all as well
+55:12
+so is there any way we can
+55:18
+just format you yes
+55:23
+not explore this oh we have forms also ticket forms and
+55:36
+fields so
+55:43
+yeah okay here we can add the fields right
+55:51
+so only those fields will be visible whichever we select for this form id but
+55:56
+api i think as of now we are not sending any form ids right no no right now we
+56:00
+are not using so we need to add a form id also to make it work then
+56:08
+okay can you try this sagar so for cfco yeah you can try actually but
+56:14
+we have not used this so i remember uh during the discussion
+56:20
+with ragland right so yeah we told him that it will show up for every ticket
+56:24
+yes and then we said that we'll go and explore if this is possible but it
+56:28
+didn't i didn't get uh
+56:31
+time to explore this but yeah now that we can see
+56:35
+uh that we can add uh or delete fields for a particular type of ticket then we
+56:40
+should be able to do it okay
+56:46
+okay yeah
+56:48
+so these are the ticket ids so
+56:53
+that you can add and apart from that
+56:57
+just once again yeah
+57:21
+so that was about ticket ids
+57:27
+so uh if you add new ticket ids we need to add
+57:30
+it with config so that the content can map
+57:35
+the values to this ids so for the fields to show up you need to
+57:39
+map the values to the sides again so
+57:49
+these topics are used by olb and these are the ones used by
+57:54
+mb there
+57:56
+are duplicate patterns
+58:04
+so now you don't get confused this is for all
+58:08
+me and this is this one
+58:11
+okay next there are tags
+58:15
+so there was one requirement where
+58:20
+we had to differentiate between the requests from
+58:24
+uh retail user and business user so
+58:32
+we thought of adding a new field initially but then we thought we could
+58:36
+use tags and uh
+58:42
+adding tags is simple so you just have to whenever you
+58:48
+create a ticket that time here
+58:51
+like we had fields we need to add tags
+58:58
+so these are tags are for free login and post login free login we send the value
+59:03
+as per public and post login we send the value is secure
+59:07
+similarly for business and retail we have different tags and
+59:11
+the tags will show up as like this yeah yeah
+59:20
+also there was one recent requirement by connect radar where they wanted uh
+59:26
+some uh the all the transaction enquiries
+59:30
+to go to a particular agent so
+59:35
+uh for that what we did was whenever a
+59:39
+ticket was created for a transaction inquiry we
+59:42
+used to add a tag transaction underscore enquiry
+59:49
+we use that tag for all transaction enquiries and we set up a trigger over
+59:54
+here yeah we set up a trigger over here in
+1:00:08
+which we mentioned if any ticket
+1:00:12
+which has this stack transaction enquiry he added a condition over here
+1:00:20
+the ticket is created and it has this tag
+1:00:26
+the action would be to assign that to
+1:00:29
+that particular agent which you wanted here for testing
+1:00:33
+purpose we have assigned it to this agent
+1:00:38
+so this is how we implemented
+1:00:43
+that particular requirement for connect
+1:00:46
+add-ons so once we
+1:00:48
+added the tag in the front end and added this trigger
+1:00:52
+uh in the connected host portal all the tickets uh
+1:00:57
+transaction and query tickets were getting assigned to that particular
+1:01:00
+agent so yeah if you go and explore there are
+1:01:07
+multiple things uh incentives you can create automations you can create
+1:01:13
+triggers so and most of the times the cu does
+1:01:17
+have a requirement that they want emails to be sent for certain conditions
+1:01:31
+so notify requester of a new ticket all those
+1:01:37
+there are some predefined uh triggers which we have disabled for now
+1:01:42
+because uh this is because this is a test environment
+1:01:45
+we get multiple emails on a daily basis because qa
+1:01:50
+keeps on testing right so we have disabled all this but these are three
+1:01:53
+different triggers which are available
+1:01:56
+and based on series preference uh we can enable or disable any of this trigger
+1:02:02
+so most of the times what happens is the ceo doesn't know where to set this up
+1:02:07
+and they come back to us with the requirements based on that we need to
+1:02:11
+update either enable disable or
+1:02:14
+update or create a new trigger based on the requirement
+1:02:26
+so that is about fields tax
+1:02:33
+i think apart from that we don't use many
+1:02:41
+features over here yeah so
+1:02:56
+i'll go through the flow once so if you go to the plug-in uh
+1:03:12
+you can see multiple methods like
+1:03:17
+create user update user get tickets yeah so these are the apis that are
+1:03:26
+available similarly
+1:03:33
+so but the flow is basically like this so what happens is
+1:03:39
+whenever a user clicks on uh the help desk option
+1:03:43
+in the app the first thing uh we do is
+1:03:48
+we try to get the user because we have the
+1:03:52
+uh user details like email and unique
+1:03:55
+identifier we try to get the user the users are stored
+1:04:01
+when the users are stored in zendesk we store four things
+1:04:07
+first name last name email and external id so whenever a user is
+1:04:12
+created we store these four things first name last name email and
+1:04:17
+external id so email is the primary key for user
+1:04:21
+engine desk the reason for storing the external id
+1:04:27
+is because the user can change his email uh the contact info module once the
+1:04:32
+email is changed then we won't have uh if then
+1:04:37
+we won't be able to get the user from gender every time a new user will be
+1:04:41
+created so that's the reason we use external id
+1:04:44
+externality is unique uh to the user the
+1:04:48
+uh we are using the unique identity identifier as the external id
+1:04:53
+we use tenant uh id
+1:04:57
+which is our bank id hyphen uh unique identifier as the external id
+1:05:03
+because sometimes what happens is the
+1:05:08
+two users from multiple uh customers might have same uh
+1:05:16
+unique identifier if
+1:05:22
+that scenario happens then again uh it will throw an error because it will say
+1:05:25
+that user is already there you cannot to create a user
+1:05:29
+that's the reason we use a bank id hyphen unique identifier as the external
+1:05:33
+id so uh
+1:05:36
+so first thing that happens
+1:05:38
+is uh when the user clicks on zendesk
+1:05:43
+option is get user using the external id so if
+1:05:47
+user has already accessed this feature a user
+1:05:50
+will be created in zendesk and that user will be written based on external id
+1:05:57
+if a user is accessing this feature for the first
+1:06:00
+time you won't get any users in this api call
+1:06:06
+if there are no users returned by this api call then we go to create user
+1:06:11
+so i'll create creating user again you use the four things first name last name
+1:06:15
+email and external uh id which is nothing but a
+1:06:20
+bank id hyphen unique identifier and we create the user
+1:06:27
+uh once the user is created we can go ahead and create tickets for
+1:06:32
+the user so
+1:06:35
+the next api that is called is create ticket so create ticket uh
+1:06:41
+while creating ticket there are some mandatory fields like subject
+1:06:45
+description of and all that that user has to
+1:06:50
+enter but uh there's one more thing attachment
+1:06:56
+uh if the user wants to attach
+1:07:01
+to add any attachment to the ticket then there's a
+1:07:05
+separate api to upload a file so uh
+1:07:10
+first we upload the file it can be an image or
+1:07:15
+a video or anything
+1:07:18
+that's config for supported file types as well
+1:07:29
+is a this is the boundary can we document sheet
+1:07:34
+jeff or anything any one of
+1:07:37
+these file types so when the user wants to upload attach
+1:07:42
+a file then we first need to upload that file when we upload this
+1:07:47
+file to zendesk we get back an id
+1:07:52
+that id we need to attach to the ticket while creating the ticket so that the
+1:07:58
+attachment shows up in the center so once the ticket is created uh
+1:08:05
+it shows up and on clicking off your ticket the sdk
+1:08:11
+is sponsored so this is the flow
+1:08:17
+uh apart from that there is one important
+1:08:23
+thing what if the user changes the email in our contact info section
+1:08:29
+in that case what happens is we again we get the user first based on external
+1:08:35
+identifier when we get the user we
+1:08:40
+try to match
+1:08:43
+the email from contact info with the email we get from zendesk
+1:08:48
+if that is matching then we proceed we proceed with the creating
+1:08:53
+ticket or getting the list of tickets for the user
+1:08:58
+but if the email is not matching which means the user has changed his email
+1:09:04
+after the user was created in centers
+1:09:09
+then there is one additional flow which is required
+1:09:14
+that happens internally so when we create a user using email
+1:09:27
+which is the primary key an identity is created for
+1:09:31
+that user engine disk yeah
+1:09:42
+so an identity is created for that user and
+1:09:47
+send disk so when we see that the user's email is
+1:09:52
+not matching with what is present in zendesk then what
+1:09:56
+we need to update uh the
+1:10:00
+email of the user in sender so there's one separate flow for that
+1:10:04
+so in that flow first we need to get the
+1:10:08
+list of user identities so
+1:10:13
+we got the user using get to user api uh in that
+1:10:18
+response you get the user's uh id so you need a auto generated id
+1:10:24
+for every zendesk user so we get that and using that we get the
+1:10:30
+user identities so a user android entities will have the
+1:10:34
+old email so
+1:10:37
+what we have to do is we need to delete that identity
+1:10:40
+and create a new identity for the user with the new email
+1:10:49
+or the actual flow is
+1:10:54
+create an identity first make it as primary
+1:10:58
+and then delete the old identity so
+1:11:08
+the new identity automatically becomes the
+1:11:11
+primary i don't think we have got to decide it as primary so
+1:11:16
+we just create a new identity for the user and delete the old one so the new
+1:11:20
+one automatically becomes the primary so this is the create identity method
+1:11:32
+and oh yeah okay so we have this
+1:11:37
+identity primary then we have the delete identity
+1:11:48
+this is the process for when the user email has
+1:11:53
+changed so i don't have a flow diagram for this i think i had it but i'm not
+1:11:58
+able to find it if i find it i'll attach the link in the
+1:12:03
+same dock this is the additional flow
+1:12:09
+which is required if the user changes the email
+1:12:13
+so we might have observed whenever you try to access zendesk it says
+1:12:18
+uh looks like your email is changed
+1:12:22
+and it gives an option to update click on update
+1:12:28
+this flow is executed create new identity make it as primary
+1:12:33
+delete the older identity the flow for updating the identity
+1:12:45
+apart from that you might see lot of aps listed here but
+1:12:48
+we are not using most of uh a lot of them
+1:12:56
+like this delete upload oh yeah we are using this so if user has
+1:13:01
+uploaded one file and then he wants to delete it then we call the
+1:13:05
+scene this api we don't get user by image
+1:13:28
+and then later we had a few
+1:13:33
+additional requirements where we had to create uh the test ticket for a
+1:13:38
+particular feature like travel notification address change
+1:13:44
+so at that time we added this new plugin action
+1:14:08
+based on the we get
+1:14:18
+but again uh this
+1:14:22
+we're using the same generic method here as well
+1:14:25
+this is just entering the
+1:14:29
+ticket details from front end based on the type
+1:14:40
+so most of times uh so everything
+1:14:44
+works fine just that we are facing with that uh
+1:14:48
+sdk issues with the jwt auth so i think once we switched on anonymous identity
+1:14:55
+uh we should be good with this feature apart from that there are a lot of
+1:15:00
+options available but whenever there is a requirement from the
+1:15:05
+cu just first
+1:15:08
+step would be to check the portal if that uh
+1:15:11
+requirement can be fulfilled uh using the
+1:15:15
+uh options in the portal itself instead of making code changes that's the
+1:15:19
+easiest option if not if
+1:15:22
+we have to do course changes then we we can
+1:15:26
+uh decide if we're doing that but yeah most of the times what happens is
+1:15:29
+whatever you ask that
+1:15:33
+functionality is present in the portal itself
+1:15:37
+so try to check first if the
+1:15:44
+that requirement can be fulfilled within the portal itself
+1:16:14
+so the details types of identities
+1:16:23
+and then to use which one it's what i had for today and here you
+1:16:48
+can see the uh there are call requests also you can
+1:16:52
+use this to create a user get tickets all that
+1:16:59
+so whenever you want to run this for any
+1:17:04
+in the test environment you will indirectly run but if you have to run it
+1:17:08
+in production then you need to change the credentials
+1:17:11
+over here oh
+1:17:19
+i have listed everything over here go through it
+1:17:25
+any questions you have right now or you have it later you can
+1:17:35
+any questions uh sagar one question on uh
+1:17:42
+we have some feature integration specific tickets also right
+1:17:46
+so suppose uh we want to suppose for reorder card we are creating
+1:17:50
+general tickets if you want to create a ticket which is specifically reflect a
+1:17:55
+replace card what all needs to be done only that
+1:17:58
+config change is required or
+1:18:03
+no no no only the front end changes are required
+1:18:07
+actually if
+1:18:10
+you want fields specific only to that feature
+1:18:14
+like surya mentioned right yes
+1:18:17
+you need to uh create a form uh incentives
+1:18:23
+or we have to create those custom fields yeah if yeah if for example if
+1:18:29
+there's a picture for example
+1:18:37
+or something which requires specific data
+1:18:42
+like a travel advisory preferred mode of contact and
+1:18:47
+yeah so if
+1:18:49
+you feel you can always just send the details in
+1:18:52
+the body right not required for example this
+1:18:55
+uh account uh inquiry so here it's
+1:18:59
+not always necessary to have fields for overdraft creation i think surya you
+1:19:05
+created so all this this old address these are
+1:19:13
+feature specific fields so just created sagar today i'm creating
+1:19:18
+new fields so uh there are two ways either
+1:19:22
+you can avoid adding new fields and have the data in
+1:19:26
+the body itself but yeah if uh
+1:19:33
+see body if this conversation is long then you you won't have that handy if
+1:19:39
+you're looking at the last comment and you want to check the
+1:19:42
+account number it here you can directly check but if you have to check
+1:19:47
+in the comments you have to scroll back to the first comment
+1:19:50
+so it's based on the requirement if also the other thing is you can't have
+1:19:57
+all the data in fields if there is
+1:20:01
+for example address if it's a very big address then no point having it here
+1:20:06
+uh unnecessarily consisting the this section
+1:20:10
+okay so basically oh so basically front end has to pass
+1:20:14
+that field id with the information and it
+1:20:18
+will populate yes yes if we don't need to have it as a
+1:20:22
+field it can be always centered at the body yeah yeah comment
+1:20:29
+and uh yeah if you need to have the field like we have in here right address
+1:20:33
+field old address then to prevent it for showing up for
+1:20:39
+all types of tickets we need to add form id
+1:20:44
+that it will show up only for that type of ticket
+1:20:47
+address change for example address change
+1:20:50
+which this old address should not uh show up for account and query
+1:20:56
+for that you need to use the form id chat we are only using the token rest we
+1:21:16
+are not doing anything right correct we are just calling that sdk and
+1:21:20
+those yes yes
+1:21:23
+we are just launching the chat but we are
+1:21:27
+sending the user details again email is the primary key and so
+1:21:31
+when we send the email it automatically links to that user
+1:21:35
+okay so in chat we are not even passing
+1:21:40
+unique identifier only email yeah here's the chat account key that
+1:21:55
+we're using mr info we are
+1:22:08
+setting these details and these are the same conflict that we
+1:22:14
+have in the settings if you go uh
+1:22:18
+if you go here chat one thing
+1:22:23
+same things we are setting over here and even
+1:22:31
+push notification is applicable for zendesk chat also
+1:22:35
+or that is only whatever the custom changes you have done for messaging no
+1:22:40
+no push notification is not applicable to chat because chat is real time right
+1:22:44
+yeah so if user closes the application comes back yeah that chat is
+1:22:49
+yeah it will be in your session okay right now it is
+1:23:05
+being used only for ceo of you ask
+1:23:24
+any other questions oh nothing from my side
+1:23:32
+nothing well i'll check sagar implementation and
+1:23:36
+ask questions i have noted on things
+1:23:40
+any doubts

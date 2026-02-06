@@ -1,0 +1,12 @@
+Category,Features,API for Credit Cards,Credit Card Phase
+Card Controls,Block Merchant types,Velera,Phase 3
+Card Controls,Block transaction types,Velera,Phase 3
+Payments & Financials,Balance Consolidation:Transfers a cardholder's balance from other lenders. Account must not be brand new.,Velera,Phase 3
+Payments & Financials,Posted Payments,Velera,Phase 3
+Payments & Financials,Enroll/Unenroll in Recurring Payments,Velera,Phase 3
+Payments & Financials,Installment loan payment: Installment Payments is a separate solution at PSCU and does require enrollment at the FI level. Please contact your PSCU Account Executive for information about the enrollment,Velera,Phase 3
+Payments & Financials,Scheduled Payments,Velera,Phase 3
+Account & Card Management,Order Replacement Card,Velera,Phase 3
+Account & Card Management,"Update Cardholder Information: Updates cardholder information, including adding/removing authorized users.",Velera,Phase 3
+Account & Card Management,Create PIN/Reset PIN,Velera,Phase 3
+"Rewards, Memos & eStatements",Next Statement Date,Velera,Phase 3

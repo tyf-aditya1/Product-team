@@ -1,0 +1,46 @@
+Category,Features,API for Credit Cards,Credit Card Phase
+Card Controls,On/Off,Velera,Phase 2
+Card Controls,Spend Limits,Velera,Phase 2
+Card Controls,Block transactions by country,Velera,Phase 2
+Card Controls,Activate Card,Velera,Phase 2
+Alerts,"Spend Limits | Transaction Limit per Transaction
+Alert: Transaction is Over Specific Amount",Velera,Phase 2
+Alerts,"Spend Limits | Transaction Limit per Month
+Alert: Transaction is Over Monthly Amount",Velera,Phase 2
+Alerts,"Location Control within US:
+Decline Transactions Outside of Geographic Location
+Alert: Transaction is Outside Geographic Location",Velera,Phase 2
+Alerts,"International Location Control:
+Decline International Transactions
+Alert: International Transaction is Detected",Velera,Phase 2
+Payments & Financials,"Make Payment - Current Balance, Statement Balance, Minimum Amount, Custom",Velera,Phase 2
+Payments & Financials,Right Time Payment (instantly credit the card when payment is scheduled for current date under $XXX.XX),Velera,Phase 2 (partial solution) - Velera recommends only internal transfer to avoid risk
+Account Summary,Current Balance,Velera,Phase 2
+Account Summary,Remaining Balance,Velera,Phase 2
+Account Summary,Available Credit,Velera,Phase 2
+Account Summary,Statement Balance,Velera,Phase 2
+Account Summary,Due Date,Velera,Phase 2
+Account Summary,Minimum Due,Velera,Phase 2
+Account Summary,Cash Back/Points Accrued Balance,Velera,Phase 2
+Account & Card Management,Report lost/stolen Block Card,Velera,Phase 2
+Account & Card Management,Dispute transactions,Velera,Phase 2
+Account & Card Management,"Unauthorized transactions[This is initiated from dispute management in the current platform , Multiselect of unauthorized transactions is not available.]",Velera,Phase 2
+Account & Card Management,Cards List,Velera,Phase 2
+Reveal Card information,Show full card number,Velera,Phase 2
+Reveal Card information,See expiration date,Velera,Phase 2
+Reveal Card information,See CVV,Velera,Phase 2
+"Rewards, Memos & eStatements",Rewards management,Velera (sso),Phase 2
+"Rewards, Memos & eStatements",Last Statement Summary Data,Velera (transaction history),Phase 2
+"Rewards, Memos & eStatements",Enroll/Unenroll in Estatements,Velera,Phase 2
+"Rewards, Memos & eStatements",Download Estatements,Velera,Phase 2
+Travel Notifications,Domestic Travel,Velera,Phase 2
+Travel Notifications,International Travel,Velera,Phase 2
+Travel Notifications,Select Date of Travel,Velera,Phase 2
+Travel Notifications,Only allow one travel period setup per card,Velera,Phase 2
+Transactions,"View Transactions (Categories: Pending, Posted, All)",Velera,Phase 2
+Transactions,"View Transactions - Description, Posted Date, Amount",Velera,Phase 2
+Transactions,"View Transactions - View All, View by Statements, View by From/To Date",Velera,Phase 2
+Transactions,View Transactions - Search by description or amount,Velera,Phase 2
+Transactions,"Download Transactions (csv, qbx)",Velera,Phase 2
+Transactions,Print Transactions,Velera,Phase 2
+Transactions,Dispute posted transaction,Velera,Phase 2
