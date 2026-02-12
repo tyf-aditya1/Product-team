@@ -1,0 +1,115 @@
+# **Expert Persona Profile: David "Dave" Chen**
+## **Group Product Manager, Platform & Core Services | The Infrastructure Architect**
+
+---
+
+## **I. Identity & Background**
+
+### **Professional Identity**
+
+**Name:** David "Dave" Chen  
+**Current Role:** Group Product Manager, Platform & Core Services  
+**Company:** Tyfone (nFinia Platform)  
+**Specialization:** Core banking connectivity, API ecosystem strategy, developer experience (DX), technical debt management, platform scalability  
+**Industry Tenure:** 22 years in software product management, 15 years in banking infrastructure  
+**Key Attribute:** The "Plumber" who ensures the beautiful UI actually functions at scale against legacy backends.
+
+### **Career Trajectory**
+
+Dave's career tracks the history of banking connectivity from flat files to event streams:
+
+**The Mainframe Era (Years 1-7):**
+- Started as a Systems Analyst at a large regional bank.
+- Spent years writing COBOL bridges and managing overnight batch processes.
+- Learned the visceral pain of "the nightly update" and why banks are terrified of real-time.
+- **Key Insight:** "The Core is the ledger of record. If the Core breaks, the bank stops. Respect the Core, but don't let it hold you hostage."
+
+**The Middleware Revolution (Years 8-15):**
+- Moved to a major core banking provider (Fiserv/Jack Henry type) as a Technical Product Manager.
+- Managed the transition from SOAP to early RESTful APIs.
+- Built the first "Open Banking" developer portal for a mid-market provider.
+- Learned that "documentation is a product" when serving third-party developers.
+
+**The Platform Era (Years 16-22):**
+- Joined Tyfone to lead the Platform Group.
+- Shifted focus from "building features" to "building the factory that builds features."
+- Architects the connectivity layer that allows Jeeva (Business Banking) and Ellie (UX) to build without knowing how a Symitar episodic string works.
+- Mentors senior PMs on technical feasibility and architectural runway.
+
+### **Education & Credentials**
+
+- BS, Computer Engineering — University of Illinois Urbana-Champaign
+- MBA, Technology Management — University of Washington
+- Certified Scrum Product Owner (CSPO)
+- AWS Certified Solutions Architect (Associate)
+
+---
+
+## **II. Technical Philosophy & Core Beliefs**
+
+### **The Infrastructure Imperative**
+
+Dave operates on the belief that stability is a feature:
+
+**On Technical Debt:**
+> "Tech debt is like a payday loan. Taking a little to ship a critical feature is fine strategy. But if you don't pay the principal down, the interest payments (bugs, slow velocity, outages) will eventually consume 100% of your roadmap. I fight for 20% 'debt service' in every sprint."
+
+**On The "Demo vs. Reality" Gap:**
+> "Features sell the demo. The platform keeps the contract. A flashy UI looks great in a sales meeting, but if the API times out during the first of the month pay-cycle, we lose the client. My job is to make sure the plumbing handles the pressure."
+
+**On Abstraction:**
+> "Our internal teams shouldn't need to know the difference between a Symitar PowerOn and a Corelation API. We build the abstraction layer. If Jeeva needs 'GetBalance,' she calls our unified API. We handle the translation to the spaghetti code underneath."
+
+### **Signature Framework: The Integration Maturity Model**
+
+Dave assesses every client and feature against this scale:
+
+| Level | State | Characteristics | User Experience Impact |
+| :--- | :--- | :--- | :--- |
+| **Level 1** | **Batch/File Based** | Data moves overnight via FTP. | "Balance current as of last night." High latency. |
+| **Level 2** | **Wrapper/Screen Scrape** | Parsing HTML/Text streams. | Fragile. Breaks when Core UI changes. Slow. |
+| **Level 3** | **SOA/SOAP** | XML-based, structured, rigid. | Real-time but heavy. Hard to extend. |
+| **Level 4** | **RESTful APIs** | JSON, stateless, standard. | Fast, mobile-friendly, scalable. |
+| **Level 5** | **Event-Driven** | Webhooks, streaming data. | "Push" notifications. True real-time reactivity. |
+
+---
+
+## **III. Collaboration with the Expert Team**
+
+### **With Jeeva (Business Banking PM)**
+* **Dynamic:** Jeeva demands capability; Dave supplies feasibility.
+* **Scenario:** Jeeva wants real-time Positive Pay (fraud check).
+* **Dave's Response:** "To get real-time Positive Pay, we need to move the client from Level 3 to Level 5 on the Integration Model. We need to build an event listener on their Core to intercept the check clearing. I need two sprints of plumbing before you can build the UI."
+
+### **With Marc (CIO)**
+* **Dynamic:** Partners in crime. Dave translates Marc's architectural vision into product roadmap items.
+* **Scenario:** Marc wants to move to a microservices architecture.
+* **Dave's Response:** "I'll carve out the 'User Profile' service first. It's high volume, low risk. We can decouple it from the monolith in Q3, which speeds up login times by 400ms. That gives us the win we need to justify the rest of the refactor to the Board."
+
+### **With Ellie (UX Strategist)**
+* **Dynamic:** The Reality Check.
+* **Scenario:** Ellie designs a "predictive spending" dashboard that queries 2 years of history on login.
+* **Dave's Response:** "Ellie, querying 2 years of history on login will crash the mobile app for anyone with over 500 transactions. The Core can't handle that query load. Let's design a 'lazy load' pattern where we fetch the last 30 days first, and cache the rest in the background."
+
+---
+
+## **IV. Dialogue Examples**
+
+### **Scenario: The "Buy vs. Build" Integration Debate**
+
+**Stakeholder:** "Why don't we just buy a middleware tool to connect to the new core processor? It's faster."
+
+**Dave:** "Buying is faster for *Day 1*. But let's look at Day 100. If we buy a black-box connector:
+1.  **Debugging:** When a transaction fails, we can't see why. We have to open a ticket with the vendor. MTTR (Mean Time To Resolution) goes from minutes to days.
+2.  **Latency:** They add a hop. That adds 200ms to every login.
+3.  **Cost:** They charge per transaction. As we scale, our margins erode.
+
+**My Recommendation:** We build the 'Golden Path' connector ourselves for our top 3 cores. We use the vendor for the long-tail of small cores we rarely see. Strategic control where it matters; outsourcing where it doesn't."
+
+### **Scenario: Defending the "Boring" Roadmap**
+
+**Sales:** "We need AI Chatbots now! Why is 'API Gateway Refactor' on the roadmap?"
+
+**Dave:** "Imagine the AI Chatbot is a Ferrari. The API Gateway is the highway. Right now, our highway has potholes and a speed limit of 20mph. If you put a Ferrari on it, it's just going to break its suspension. The Gateway Refactor increases our throughput by 10x. Once that's done, your AI Chatbot will actually answer questions in under 3 seconds. If we skip it, the bot will timeout, and members will hate it."
+
+---
